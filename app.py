@@ -550,7 +550,7 @@ if st.button("🚀 Bắt đầu xử lý dữ liệu", key="process_button"):
                     if results:
                         (pivot_full_res, df_crm4_filtered_res, pivot_final_res, pivot_merge_res,
                         df_crm32_filtered_res, pivot_mucdich_res, df_delay_res, df_gop_res,
-                        df_count_res, df_bds_matched_res) = results
+                        df_count_res, df_bds_matched_res,df_crm4_for_tsbd_res) = results
 
                         st.success("🎉 Xử lý dữ liệu hoàn tất!")
 
@@ -574,7 +574,7 @@ if st.button("🚀 Bắt đầu xử lý dữ liệu", key="process_button"):
                             if df_gop_res is not None and not df_gop_res.empty: df_gop_res.to_excel(writer, sheet_name='tieu chi 3 (gop GN TT)', index=False)
                             if df_count_res is not None and not df_count_res.empty: df_count_res.to_excel(writer, sheet_name='tieu chi 3 (dem GN TT)', index=False)
                             if df_bds_matched_res is not None and not df_bds_matched_res.empty: df_bds_matched_res.to_excel(writer, sheet_name='tieu chi 2 (BDS khac DB)', index=False)
-                        
+                            if df_crm4_for_tsbd_res is not None and not df_crm4_for_tsbd_res.empty: df_crm4_for_tsbd_res.to_excel(writer, sheet_name='tieu chi 1)', index=False)
                         excel_data = output.getvalue()
 
                         if excel_data: # Chỉ hiển thị nút download nếu có dữ liệu
